@@ -1,0 +1,10 @@
+[project]
+name = "work-toolsets"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "huggingface-hub>=0.35.0",
+    "modelscope>=1.30.0",
+]
