@@ -1,0 +1,67 @@
+# MediaMTX configuration file
+
+# Log settings
+logLevel: info
+logDestinations: [stdout, file]
+logFile: "/app/logs/mediamtx.log"
+
+# Connection settings
+readTimeout: 10s
+writeTimeout: 10s
+readBufferCount: 512
+
+# API settings
+api: yes
+apiAddress: :9997
+
+# Metrics settings
+metrics: yes
+metricsAddress: :9998
+
+# Profiling settings (disabled for production)
+pprof: no
+pprofAddress: :9999
+
+# Hook settings
+runOnConnect: ""
+runOnConnectRestart: no
+runOnDisconnect: ""
+
+# RTSP settings
+rtspDisable: no
+rtspAddress: :8554
+protocols: [multicast, tcp, udp]
+encryption: "no"
+rtspAuthMethods: [basic, digest]
+
+# RTMP settings
+rtmpDisable: no
+rtmpAddress: :1935
+rtmpEncryption: "no"
+
+# HLS settings
+hls: yes
+hlsAddress: :8888
+hlsEncryption: no
+hlsAllowOrigin: "*"
+hlsVariant: lowLatency
+hlsSegmentCount: 7
+hlsSegmentDuration: 1s
+
+# WebRTC settings
+webrtc: yes
+webrtcAddress: :8889
+webrtcEncryption: no
+webrtcAllowOrigin: "*"
+
+# Path settings
+paths:
+  all:
+    source: "publisher"
+    sourceProtocol: "automatic"
+    record: no
+  
+  # Example: specific path for file streaming
+  # test:
+  #   source: "ffmpeg:./videos/steel_factory.mp4"
+  #   sourceProtocol: "automatic"
