@@ -3,7 +3,7 @@
 # MediaMTX and FFmpeg Startup Script
 # This script starts MediaMTX server and publishes a video stream using FFmpeg
 
-set -e  # Exit on any error
+set -e  # Exit on error
 
 echo "Starting MediaMTX server..."
 
@@ -32,7 +32,7 @@ ffmpeg -re -stream_loop -1 -i /app/videos/steel_factory.mp4 \
     -rtsp_transport tcp \
     -avoid_negative_ts make_zero \
     -fflags +genpts \
-    rtsp://localhost:8554/steel &
+    rtsp://localhost:8554/live &
 
 FFMPEG_PID=$!
 echo "FFmpeg started with PID: $FFMPEG_PID"
@@ -40,9 +40,9 @@ echo "FFmpeg started with PID: $FFMPEG_PID"
 echo "=================================="
 echo "MediaMTX Server is running!"
 echo "--------------------------------"
-echo "RTSP Stream: rtsp://localhost:8554/steel"
+echo "RTSP Stream: rtsp://localhost:8554/live"
 echo "Web Interface: http://localhost:8888"
-echo "HLS Stream: http://localhost:8888/steel"
+echo "HLS Stream: http://localhost:8888/live"
 echo "WebRTC: http://localhost:8889"
 echo "API: http://localhost:9997"
 echo "Metrics: http://localhost:9998/metrics"
