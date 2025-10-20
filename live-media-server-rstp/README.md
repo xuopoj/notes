@@ -1,5 +1,6 @@
 # MediaMTX RTSP 服务器（自动发布视频流）
 
+**注意：repo归档不再更新，迁移到[service-delivery-hub](https://github.com/xuopoj/service-delivery-hub/tree/main/live-media-server-rstp)**
 运行 MediaMTX 服务器并在启动时自动流式传输视频文件的 Docker 容器。
 
 ## 功能特性
