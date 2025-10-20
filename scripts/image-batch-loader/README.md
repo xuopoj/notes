@@ -1,5 +1,7 @@
 # Docker镜像批量load, tag, push
 
+**repo归档不再更新，迁移到[service-delivery-hub](https://github.com/xuopoj/service-delivery-hub/tree/main/scripts/image-batch-loader)**
+
 ## 说明
 
 1. 搜索目录下的所有归档文件（通过通配符指定："*.tar", "*.tar.gz", "*.tar*"）；
